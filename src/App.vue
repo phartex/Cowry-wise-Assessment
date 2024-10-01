@@ -184,4 +184,24 @@ this.fetchImagesFromUnsplash(this.searchQuery);
   margin-top:-90px;
 }
 
+@media (max-width: 768px) {
+  .image-results {
+    grid-template-columns: 1fr; /* Single column on small screens */
+    padding: 20px;
+     margin-top:0px;
+  }
+
+  .search-container {
+    padding: 2rem 1rem;
+    width: 90%;
+    
+  }
+
+  .search-input {
+    font-size: 14px;
+    padding-left: 30px;
+    width: 80%;
+  }
+}
+
 </style>
