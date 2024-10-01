@@ -29,7 +29,7 @@ export default {
   border-radius: 10px;
   transition: transform 0.3s ease;
   cursor: pointer;
-padding-top:20px;
+  padding-top:20px;
   
   
   &:nth-child(odd) {

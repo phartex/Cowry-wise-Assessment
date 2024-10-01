@@ -14,8 +14,7 @@
 
      <div v-if="searchQuery.trim()" class="search-result-message">
      <p> Search results for "{{ searchQuery }}"</p>  
-    </div> 
-     
+    </div>      
   </div>
  
 
@@ -45,7 +44,7 @@
       :image="selectedImage"
       :isVisible="isModalVisible"
       @close="closeModal"
-    />
+  />
 
    
 </template>
@@ -197,7 +196,7 @@ export default {
 
 @media (max-width: 768px) {
   .image-results {
-    grid-template-columns: 1fr; /* Single column on small screens */
+    grid-template-columns: 1fr; 
     padding: 20px;
      margin-top:0px;
   }
