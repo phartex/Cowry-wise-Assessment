@@ -10,8 +10,15 @@
         @input="handleInput"
         @keydown.enter="searchImages"
       />
-    </div>    
+    </div>  
+
+     <div v-if="searchQuery.trim()" class="search-result-message">
+     <p> Search results for "{{ searchQuery }}"</p>  
+    </div> 
+     
   </div>
+ 
+
 
    <div class="image-results">
 
@@ -51,8 +58,8 @@ export default {
   data() {
     return {
       searchQuery: '',
-       images: [],
-        selectedImage: null, 
+      images: [],
+      selectedImage: null, 
       isModalVisible: false,
       isLoading: false,
     };
@@ -65,11 +72,8 @@ export default {
     ImageModal
   },
   methods: {
-   handleInput() {
-      
-      clearTimeout(this.timeout);
-      
- 
+   handleInput() {      
+      clearTimeout(this.timeout);    
       this.timeout = setTimeout(() => {
         this.searchImages();
       }, 1000);
@@ -81,7 +85,7 @@ export default {
       this.isLoading = true;
     
      setTimeout(() => {
-this.fetchImagesFromUnsplash(this.searchQuery);
+      this.fetchImagesFromUnsplash(this.searchQuery);
      },1000)
     },
 
@@ -114,6 +118,13 @@ this.fetchImagesFromUnsplash(this.searchQuery);
 
 <style lang="scss" scoped>
 
+.search-result-message {
+  text-align: center;
+  margin: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .placeholder-card {
   width: 100%;
   max-width: 300px;
@@ -143,7 +154,7 @@ this.fetchImagesFromUnsplash(this.searchQuery);
   align-items: center;
   margin-bottom: 20px;
    background-color:#D3D1CB  ;
-   padding:5.5rem 6rem;
+   padding:4.5rem 6rem;
 }
 
 .input-wrapper {
